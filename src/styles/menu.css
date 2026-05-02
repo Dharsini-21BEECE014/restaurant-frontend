@@ -1,0 +1,380 @@
+.page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* TITLE */
+h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* HEADER ROW */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    margin-bottom: 12px;
+}
+
+.header-row h2 {
+    color: #fbbf24;
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* =========================
+   ACTIVE TABLE SELECT
+========================= */
+.table-select-box {
+    background: #111c33;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #1f2a44;
+    margin-bottom: 15px;
+    height: 73px;
+
+    max-width: 320px;
+    /* 🔥 limit width */
+}
+
+.table-select-box label {
+    font-size: 13px;
+    color: #f59e0b;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.booking-select {
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    background: #0f172a;
+    color: white;
+    border: 1px solid #1f2a44;
+    outline: none;
+    max-width: 300px;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.section-title {
+    margin-top: 20px;
+    color: white;
+}
+
+/* =========================
+   MENU GRID (4 PER ROW FIX)
+========================= */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .menu-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* =========================
+   MENU CARD
+========================= */
+.menu-card {
+    background: #1f1f2e;
+    color: white;
+
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+
+    min-height: 130px;
+    border: 1px solid #2e2e3f;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+
+    transition: 0.3s;
+    width: 250px;
+}
+
+.menu-card::before {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #f59e0b, #00c853);
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 10px;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+}
+
+/* HEADER */
+.menu-header h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* QTY */
+.qty {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #ffcc00;
+}
+
+/* PRICE */
+.price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ADD BUTTON */
+.add-btn {
+    background: #00c853;
+    border: none;
+    padding: 6px 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.add-btn:hover {
+    background: #00b34a;
+}
+
+/* =========================
+   PLACE ORDER
+========================= */
+.center-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.large-btn {
+    padding: 14px 25px;
+    font-size: 16px;
+    width: 220px;
+}
+
+.booking-btn {
+    margin-top: 10px;
+    background: #f59e0b;
+    color: #0f172a;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* =========================
+   ORDER GRID
+========================= */
+.order-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.order-item-card {
+    background: #1f1f2e;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* =========================
+   FILTER + TABLE SECTION
+========================= */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-tabs button {
+    background: #111c33;
+    border: 1px solid #1f2a44;
+    color: #94a3b8;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.filter-tabs button.active {
+    background: #f59e0b;
+    color: #0f172a;
+}
+
+/* TABLE GRID */
+.table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+/* TABLE CARD */
+.table-card {
+    background: linear-gradient(145deg, #111c33, #0f172a);
+    border: 1px solid #1f2a44;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+/* STATUS */
+.status-badge {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 999px;
+}
+
+.available .status-badge {
+    color: #22c55e;
+}
+
+.occupied .status-badge {
+    color: #ef4444;
+}
+
+.reserved .status-badge {
+    color: #f59e0b;
+}
+
+.maintenance .status-badge {
+    color: #94a3b8;
+}
+
+/* BUTTONS */
+.table-btn {
+    margin-top: 12px;
+    width: 100%;
+    background: #f59e0b;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background: #10b981;
+}
+
+.disabled-btn {
+    background: rgba(148, 163, 184, 0.2);
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-card {
+    background: #1f1f2e;
+    padding: 20px;
+    border-radius: 12px;
+    width: 350px;
+    color: white;
+}
+
+.close-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    background: #f59e0b;
+    border: none;
+    border-radius: 8px;
+}
+
+/* =========================
+   MESSAGE BANNER (FIXED)
+========================= */
+.msg-banner {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.msg-banner.success {
+    background: #16a34a;
+    color: white;
+}
+
+.msg-banner.error {
+    background: #dc2626;
+    color: white;
+}
+
+/* =========================
+   QTY CONTROLS (+ / -)
+========================= */
+.qty-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.qty-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.qty-btn.minus {
+    background: #ef4444;
+    color: white;
+}
+
+.qty-btn.plus {
+    background: #22c55e;
+    color: white;
+}
+
+.qty-value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fbbf24;
+    min-width: 20px;
+    text-align: center;
+}

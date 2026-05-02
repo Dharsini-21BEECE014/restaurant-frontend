@@ -1,0 +1,55 @@
+/* app.css */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #111c33, #0f172a);
+  border-bottom: 1px solid #1f2a44;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Nav links */
+nav a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+/* Hover effect */
+nav a:hover {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  transform: translateY(-1px);
+}
+
+/* Active-like feel (React Router doesn't auto add active here, but visual improvement) */
+nav a:active {
+  transform: scale(0.98);
+}
+
+/* App background wrapper feel */
+body {
+  background: #0f172a;
+}
+
+/* Optional branding area */
+nav::before {
+  content: "🍽 TableBook";
+  font-weight: 700;
+  color: #f59e0b;
+  margin-right: 20px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.app-container {
+  padding: 20px;
+}
