@@ -28,8 +28,56 @@ export default function Bookings() {
     api.get("/tables/available").then((res) => setTables(res.data));
   }, []);
 
+  // const submit = async () => {
+  //   try {
+  //     if (
+  //       !form.customerName ||
+  //       !form.customerPhone ||
+  //       !form.guestCount ||
+  //       !form.tableId ||
+  //       !form.bookingDate
+  //     ) {
+  //       showMessage("All fields required");
+  //       return;
+  //     }
+
+  //     if (Number(form.guestCount) <= 0) {
+  //       showMessage("Guest count must be greater than 0");
+  //       return;
+  //     }
+
+  //     if (new Date(form.bookingDate) <= new Date()) {
+  //       showMessage("Booking must be future date");
+  //       return;
+  //     }
+
+  //     const payload = {
+  //       customerName: form.customerName,
+  //       customerPhone: form.customerPhone,
+  //       guestCount: Number(form.guestCount),
+  //       tableId: Number(form.tableId),
+  //       bookingDate: form.bookingDate,
+  //     };
+
+  //     const res = await api.post("/bookings", payload);
+
+  //     showMessage("✅ Booking Success: " + res.data.bookingNumber, "success");
+
+  //     setForm({
+  //       customerName: "",
+  //       customerPhone: "",
+  //       guestCount: "",
+  //       tableId: "",
+  //       bookingDate: "",
+  //     });
+  //   } catch (err) {
+  //     showMessage(err.response?.data || "Booking failed");
+  //   }
+  // };
   const submit = async () => {
     try {
+      console.log("👉 Submit clicked");
+
       if (
         !form.customerName ||
         !form.customerPhone ||
@@ -37,17 +85,8 @@ export default function Bookings() {
         !form.tableId ||
         !form.bookingDate
       ) {
+        console.log("❌ Validation failed: missing fields");
         showMessage("All fields required");
-        return;
-      }
-
-      if (Number(form.guestCount) <= 0) {
-        showMessage("Guest count must be greater than 0");
-        return;
-      }
-
-      if (new Date(form.bookingDate) <= new Date()) {
-        showMessage("Booking must be future date");
         return;
       }
 
@@ -59,18 +98,18 @@ export default function Bookings() {
         bookingDate: form.bookingDate,
       };
 
+      console.log("📦 Payload sent:", payload);
+
       const res = await api.post("/bookings", payload);
 
-      showMessage("✅ Booking Success: " + res.data.bookingNumber, "success");
+      console.log("✅ API Response:", res.data);
 
-      setForm({
-        customerName: "",
-        customerPhone: "",
-        guestCount: "",
-        tableId: "",
-        bookingDate: "",
-      });
+      showMessage("Booking Success: " + res.data.bookingNumber, "success");
     } catch (err) {
+      console.log("❌ ERROR FULL:", err);
+      console.log("❌ RESPONSE:", err.response?.data);
+      console.log("❌ STATUS:", err.response?.status);
+
       showMessage(err.response?.data || "Booking failed");
     }
   };
