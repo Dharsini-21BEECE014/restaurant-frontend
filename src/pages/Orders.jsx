@@ -128,6 +128,16 @@ export default function CreateOrder() {
       if (!bookingId) return showMessage("Select table");
       if (!items.length) return showMessage("Add items");
 
+      // 🔥 STEP 1: seat booking first
+      const selectedBooking = bookings.find(
+        (b) => b.bookingId === Number(bookingId),
+      );
+
+      if (selectedBooking?.status === "Confirmed") {
+        await api.put(`/bookings/${bookingId}/seat`);
+      }
+
+      // 🔥 STEP 2: place order
       const payload = {
         bookingId: Number(bookingId),
         items: items.map((i) => ({
@@ -147,7 +157,7 @@ export default function CreateOrder() {
       loadData();
     } catch (err) {
       console.log("ERROR:", err.response?.data || err.message);
-      showMessage("Order failed");
+      showMessage(err.response?.data || "Order failed");
     }
   };
 
