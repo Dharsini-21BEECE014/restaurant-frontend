@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
 import "../styles/menu.css";
+import { Helmet } from "react-helmet";
 
 export default function Menu() {
   const [items, setItems] = useState([]);
@@ -12,6 +13,9 @@ export default function Menu() {
   return (
     <div className="page">
       <div className="header-row">
+        <Helmet>
+          <title>Menu</title>
+        </Helmet>
         <h2>🍽 Menu</h2>
       </div>
       <div className="menu-grid">

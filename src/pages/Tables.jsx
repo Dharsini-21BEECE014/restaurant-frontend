@@ -10,6 +10,11 @@ export default function Tables() {
 
   useEffect(() => {
     document.title = "Tables | Restaurant";
+
+    const link = document.querySelector("link[rel~='icon']");
+    if (link) {
+      link.href = "Tables.png"; // your icon
+    }
     loadTables();
   }, []);
 

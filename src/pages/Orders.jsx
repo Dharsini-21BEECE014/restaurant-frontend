@@ -16,6 +16,12 @@ export default function CreateOrder() {
   };
 
   useEffect(() => {
+    document.title = "Orders";
+
+    const link = document.querySelector("link[rel~='icon']");
+    if (link) {
+      link.href = "/Orders.png"; // ✅ your icon
+    }
     loadData();
   }, []);
 
