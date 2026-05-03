@@ -96,6 +96,33 @@ export default function CreateOrder() {
   // =========================
   // SUBMIT ORDER
   // =========================
+  // const submit = async () => {
+  //   try {
+  //     if (!bookingId) return showMessage("Select table");
+  //     if (items.length === 0) return showMessage("Add items");
+
+  //     const selectedBooking = bookings.find(
+  //       (b) => b.bookingId === Number(bookingId),
+  //     );
+
+  //     if (selectedBooking?.status === "Confirmed") {
+  //       await api.put(`/bookings/${bookingId}/seat`);
+  //     }
+
+  //     await api.post("/orders", {
+  //       bookingId: Number(bookingId),
+  //       items,
+  //     });
+
+  //     showMessage("Order placed successfully", "success");
+
+  //     setItems([]);
+  //     setBookingId("");
+  //     loadData();
+  //   } catch {
+  //     showMessage("Order failed");
+  //   }
+  // };
   const submit = async () => {
     try {
       if (!bookingId) return showMessage("Select table");
@@ -105,10 +132,15 @@ export default function CreateOrder() {
         (b) => b.bookingId === Number(bookingId),
       );
 
+      // 🔥 STEP 1: seat booking
       if (selectedBooking?.status === "Confirmed") {
         await api.put(`/bookings/${bookingId}/seat`);
+
+        // 🔥 IMPORTANT: wait & reload booking state
+        await new Promise((res) => setTimeout(res, 500));
       }
 
+      // 🔥 STEP 2: create order
       await api.post("/orders", {
         bookingId: Number(bookingId),
         items,
@@ -119,8 +151,9 @@ export default function CreateOrder() {
       setItems([]);
       setBookingId("");
       loadData();
-    } catch {
-      showMessage("Order failed");
+    } catch (err) {
+      console.log("❌ ORDER ERROR:", err.response?.data);
+      showMessage(err.response?.data || "Order failed");
     }
   };
 
