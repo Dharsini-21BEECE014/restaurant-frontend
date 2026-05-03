@@ -10,6 +10,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
 }
 
 /* Nav links */
@@ -52,4 +53,56 @@ nav::before {
 
 .app-container {
   padding: 20px;
+}
+
+
+/* =========================
+   📱 TABLET (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+  nav {
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  nav::before {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .app-container {
+    padding: 15px;
+  }
+}
+
+/* =========================
+   📱 MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    /* stack nav */
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  nav::before {
+    margin-bottom: 5px;
+  }
+
+  nav a {
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .app-container {
+    padding: 12px;
+  }
 }
