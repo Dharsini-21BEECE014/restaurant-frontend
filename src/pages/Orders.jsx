@@ -157,7 +157,11 @@ export default function CreateOrder() {
       loadData();
     } catch (err) {
       console.log("ERROR:", err.response?.data || err.message);
-      showMessage(err.response?.data || "Order failed");
+      showMessage(
+        err.response?.data?.error ||
+          err.response?.data?.inner ||
+          "Order failed",
+      );
     }
   };
 
