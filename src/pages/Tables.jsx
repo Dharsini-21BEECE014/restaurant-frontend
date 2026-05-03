@@ -9,6 +9,7 @@ export default function Tables() {
   const [filter, setFilter] = useState("available");
 
   useEffect(() => {
+    document.title = "Tables | Restaurant";
     loadTables();
   }, []);
 
