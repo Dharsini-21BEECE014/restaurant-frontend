@@ -3,6 +3,7 @@
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 18px;
   padding: 14px 24px;
   background: linear-gradient(135deg, #111c33, #0f172a);
@@ -10,6 +11,12 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* Nav links */
@@ -39,16 +46,6 @@ nav a:active {
 body {
   background: #0f172a;
 }
-
-/* Optional branding area */
-/* nav::before {
-  content: "🍽 TableBook";
-  font-weight: 700;
-  color: #f59e0b;
-  margin-right: 20px;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-} */
 
 .app-container {
   padding: 20px;
@@ -106,22 +103,15 @@ body {
     top: 60px;
     left: 0;
     right: 0;
-
     background: #111c33;
     flex-direction: column;
     gap: 0;
-
     display: none;
     border-bottom: 1px solid #1f2a44;
   }
 
   .nav-links.active {
     display: flex;
-  }
-
-  .nav-links a {
-    padding: 14px;
-    border-bottom: 1px solid #1f2a44;
   }
 }
 
