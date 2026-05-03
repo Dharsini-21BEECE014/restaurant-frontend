@@ -35,7 +35,7 @@ export default function CreateOrder() {
       ]);
 
       const activeBookings = b.data.filter(
-        (x) => x.status === "Confirmed" || x.status === "Seated",
+        (x) => x.status !== "Completed" && x.status !== "Cancelled",
       );
 
       setBookings(activeBookings);
