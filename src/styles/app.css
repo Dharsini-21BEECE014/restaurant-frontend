@@ -41,14 +41,14 @@ body {
 }
 
 /* Optional branding area */
-nav::before {
+/* nav::before {
   content: "🍽 TableBook";
   font-weight: 700;
   color: #f59e0b;
   margin-right: 20px;
   font-size: 15px;
   letter-spacing: 0.5px;
-}
+} */
 
 .app-container {
   padding: 20px;

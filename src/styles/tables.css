@@ -302,3 +302,52 @@
 .maintenance-btn:hover {
     opacity: 0.8;
 }
+
+@media (max-width: 1024px) {
+    .table-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .filter-tabs {
+        flex-wrap: wrap;
+    }
+
+    .table-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+
+    .modal-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .table-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table-card {
+        padding: 12px;
+    }
+
+    .table-btn {
+        font-size: 13px;
+        padding: 9px;
+    }
+
+    .page h2 {
+        font-size: 20px;
+    }
+
+    .status-badge {
+        font-size: 11px;
+    }
+}

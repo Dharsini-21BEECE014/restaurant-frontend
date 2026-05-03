@@ -212,3 +212,68 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     font-weight: 800;
     margin: 0;
 }
+
+
+/* =========================
+   BOOKING PAGE RESPONSIVE FIX
+========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .booking-card {
+        max-width: 500px;
+        width: 90%;
+    }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+    .book-page {
+        padding: 10px;
+    }
+
+    .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .booking-card {
+        max-width: 100%;
+        width: 100%;
+        padding: 18px;
+    }
+
+    .input-group input,
+    .select-input {
+        font-size: 14px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .header-row h2 {
+        font-size: 20px;
+    }
+
+    .booking-card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .input-group label {
+        font-size: 12px;
+    }
+
+    .input-group input,
+    .select-input {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+
+    .booking-btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px;
+    }
+}
