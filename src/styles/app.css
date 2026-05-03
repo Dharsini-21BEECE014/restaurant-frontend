@@ -96,6 +96,7 @@ body {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    margin-left: auto;
   }
 
   .nav-links {
