@@ -10,6 +10,12 @@ export default function AvailableTables() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Available-Tables";
+
+    const link = document.querySelector("link[rel~='icon']");
+    if (link) {
+      link.href = "Available.png"; // your icon
+    }
     loadTables();
   }, []);
 

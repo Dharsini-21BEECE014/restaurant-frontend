@@ -20,7 +20,7 @@ export default function CreateOrder() {
 
     const link = document.querySelector("link[rel~='icon']");
     if (link) {
-      link.href = "/Orders.png"; // ✅ your icon
+      link.href = "/Orders1.png"; // ✅ your icon
     }
     loadData();
   }, []);

@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
 import "../styles/menu.css";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 export default function Menu() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+    document.title = "Menu-items";
+
+    const link = document.querySelector("link[rel~='icon']");
+    if (link) {
+      link.href = "Menu1.png"; // your icon
+    }
     api.get("/menu-items").then((res) => setItems(res.data));
   }, []);
 
   return (
     <div className="page">
       <div className="header-row">
-        <Helmet>
+        {/* <Helmet>
           <title>Menu</title>
-        </Helmet>
+        </Helmet> */}
         <h2>🍽 Menu</h2>
       </div>
       <div className="menu-grid">

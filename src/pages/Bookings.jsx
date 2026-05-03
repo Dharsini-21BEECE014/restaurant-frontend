@@ -25,6 +25,12 @@ export default function Bookings() {
   };
 
   useEffect(() => {
+    document.title = "Bookings";
+
+    const link = document.querySelector("link[rel~='icon']");
+    if (link) {
+      link.href = "Bookings.png"; // your icon
+    }
     api.get("/tables/available").then((res) => setTables(res.data));
   }, []);
 
