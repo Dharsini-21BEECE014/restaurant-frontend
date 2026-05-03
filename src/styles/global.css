@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -69,4 +69,119 @@ button {
 
 button:hover {
     opacity: 0.8;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e5e7eb;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #111c33;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #f59e0b;
+}
+
+/* PAGE */
+.page {
+    padding: 16px;
+}
+
+/* HEADINGS */
+h2 {
+    margin-bottom: 16px;
+    color: #f59e0b;
+    font-size: 22px;
+}
+
+/* GRID SYSTEM */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+/* CARD */
+.card {
+    background: #111c33;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* BUTTON */
+button {
+    background: #f59e0b;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #0f172a;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* RESPONSIVE TEXT */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 18px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .page {
+        padding: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
 }
